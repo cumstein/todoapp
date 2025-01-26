@@ -4,9 +4,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 function SignupPage() {
-
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,7 +21,7 @@ function SignupPage() {
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
-    console.log(data);
+
     if (data.status === "success") router.push("/signin");
   };
   return (
